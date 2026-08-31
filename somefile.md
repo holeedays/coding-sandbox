@@ -7,24 +7,34 @@ This is the start of something new maybe...
 #ifndef TEXT_MODIFICATION_FUNCS
 #define TEXT_MODIFICATION_FUNCS
 
+#include<string>
+
 inline constexpr std::string someText = "This some text, quite literally.";
 
-std::string ModifyText(std::string& text);
+void ModifyText(std::string& text);
+void SwapTextPtrs(std::string*& textOnePtr, std::string*& textTwoPtr);
 
 #endif
 
 // textModFuncs.cpp
-#include "textModFuncs.h";
+#include "./textModFuncs.h";
+#include<string>
 
-std::string ModifyText(std::string& text, std::string targetText) {
+void ModifyText(std::string& text, std::string targetText) {
 	text = targetText;
 }
 
+// not sure why i included this tbh
+void SwapTextPtrs(std::string*& textOnePtr, std::string*& textTwoPtr) {
+	std::string& tempPtr = textOnePtr;
+	textOnePtr = textTwoPtr;
+	textTwoPtr = tempPtr;
+}
 
 // main.cpp
-#include <iostream>;
-#include <string>;
-#include "textModeFuncs.h";
+#include<iostream>;
+#include<string>;
+#include "./textModeFuncs.h";
 
 
 int main() {
