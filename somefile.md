@@ -3,14 +3,28 @@
 This is the start of something new maybe...
 
 ``` 
-#include <iostream>
-#include <string>
+// textModFuncs.h
+#ifndef TEXT_MODIFICATION_FUNCS
+#define TEXT_MODIFICATION_FUNCS
 
+inline constexpr std::string someText = "This some text, quite literally.";
 
+std::string ModifyText(std::string& text);
 
-std::string ModifyText(std::string& text) {
-	text = "Bye World"
+#endif
+
+// textModFuncs.cpp
+#include "textModFuncs.h";
+
+std::string ModifyText(std::string& text, std::string targetText) {
+	text = targetText;
 }
+
+
+// main.cpp
+#include <iostream>;
+#include <string>;
+#include "textModeFuncs.h";
 
 
 int main() {
@@ -20,7 +34,8 @@ int main() {
 
 	std::cout<<helloWorldText<<"\n";
 
-	ModifyText(helloWorldText);
+	// rvalue here is fine
+	ModifyText(helloWorldText, "Bye World");
 
 	std::cout<<helloWorldText<<"\n";
 
