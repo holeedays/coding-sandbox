@@ -60,8 +60,8 @@ void updateThread(float targetFPS) {
 
 int main() {
 	float fps { 60.0 };
-	//init();
-	updateThread(fps);
+	init(); // init our player
+	updateThread(fps); // creates controlled polling of our current thread (like a draw-like function)
 	
 	return 1;
 }
