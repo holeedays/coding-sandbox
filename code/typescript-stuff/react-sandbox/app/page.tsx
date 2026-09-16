@@ -1,5 +1,83 @@
+"use client"; // need to this to use useEffect handler
+
 import Image from "next/image";
 
+// react/next doesn't like direct script tags and code within a function component (you have to use a dangerouslyInnerHTML tag which is like wtf...)
+// useEffect does the same thing as a script embedding and runs after the component is rendered
+import { useEffect } from "react";
+
+// component functions must have capital first letter :/
+function HelloWorldText() {
+	
+	// useEffect renders after the component is rendered
+	useEffect(() => {
+		console.log("Adding script");
+		const introText: HTMLElement | null = document.querySelector(".intro-text");
+		if (introText !== null) {
+			console.log("Intro text detected");
+			
+			const hoverColor: string = "#dddddd";
+			const normalColor: string = "#ffffff";
+			const hoverFontSize: number = 75;
+			const normalFontSize: number = 100;
+			
+			// click method
+			introText.addEventListener("click", () => {
+				console.log("Hello World");
+			});
+			
+			// hover methods
+			introText.addEventListener("mouseenter", () => {
+				introText.style.color = hoverColor;
+				introText.style.fontSize = hoverFontSize.toString() + "px";
+			});
+			introText.addEventListener("mouseleave", () => {
+				introText.style.color = normalColor;
+				introText.style.fontSize = normalFontSize.toString() + "px";
+			});
+		}
+	}, []); // putting an empty array for the second parameter makes sure the code only runs once 
+	
+	return (
+		<h1 className="intro-text" 
+			style={{
+			color: "#ffffff", 
+			fontSize: "100px", 
+			cursor: "pointer",
+			width: "fit-content",
+			transitionProperty: "color, font-size",
+			transitionDuration: "0.25s",
+			transitionTimingFunction: "ease-in-out"
+			}}
+		>
+			Hello World
+		</h1>
+		
+		
+		//<h1 className="end-text">
+		//</h1>
+	);
+}
+
+export default function Page() {
+	return (
+		<div>
+			<HelloWorldText />
+		</div>
+	);
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -67,3 +145,4 @@ export default function Home() {
     </div>
   );
 }
+*/
