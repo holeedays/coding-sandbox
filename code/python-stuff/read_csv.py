@@ -154,7 +154,7 @@ plotly_fig: Figure = px.scatter(
     x="Year",
     y="Value",
     color="Indicator Name",
-    title="IMF Monetary Fund Turkey Overview 2020-2025"
+    title="World Bank Turkey Overview 2020-2025"
 )
 # remove decimal points for the year axis
 plotly_fig.update_layout(
