@@ -70,7 +70,7 @@ turkey_data.drop(
 indicators_to_sortby: list[str] = [
     # "Official exchange rate (LCU per US$, period average)",
     "Imports of goods, services and primary income (BoP, current US$)",
-    "Exports of goods and services (current US$",
+    "Exports of goods and services (current US$)",
     "GDP (current US$)",
     "Reserves and related items (BoP, current US$)",
     "Gross fixed capital formation (current US$)"
