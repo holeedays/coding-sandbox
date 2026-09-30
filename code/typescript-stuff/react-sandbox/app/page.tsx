@@ -1,10 +1,10 @@
-"use client"; // need to this to use useEffect handler
+"use client"; // need to this to use useEffect handler; it's a directive kind of how like in C++ you have preprocessing directives #ifndef
 
 import Image from "next/image";
 
 // react/next doesn't like direct script tags and code within a function component (you have to use a dangerouslyInnerHTML tag which is like wtf...)
 // useEffect does the same thing as a script embedding and runs after the component is rendered
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // component functions must have capital first letter :/
 function HelloWorldText() {
@@ -59,10 +59,27 @@ function HelloWorldText() {
 	);
 }
 
+function SomeButton() {
+	return (
+		<button 
+			style={{
+			left: "50%",
+			transform: "translateX: 50%"
+			width: "20vw",
+			height: "10vw",
+			transform: "translate"
+			}}
+		>
+			Click me!
+		</button>
+	);
+}
+
 export default function Page() {
 	return (
 		<div>
 			<HelloWorldText />
+			<SomeButton />
 		</div>
 	);
 }
