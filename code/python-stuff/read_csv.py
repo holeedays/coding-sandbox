@@ -44,7 +44,7 @@ def print_in_full(*args: any) -> None:
 
 # replace the file path with your file path
 info: DataFrame = pd.read_csv(
-    "C:/Users/weigh/Downloads/turkey_stats.csv", 
+    "./misc/turkey_stats.csv", 
     skiprows=4
 ).fillna(0) # also fill all the NaN values with a value
 
@@ -116,7 +116,7 @@ turkey_2020_to_2025: DataFrame = (
 # create our plot here, the first 2 parameters correspond to how many rows
 # and columns of subplots you want respectively; figsize is how width and tall
 # you want to overall viewport to be
-fig, ax = plt.subplots(1, 1, figsize=(9, 5))
+fig, ax = plt.subplots(1, 2, figsize=(16, 10))
 # use this for long format dataframes
 # sns.catplot(
     # data=turkey_2020_to_2025,
@@ -127,12 +127,20 @@ fig, ax = plt.subplots(1, 1, figsize=(9, 5))
     # height=5,
     # aspect=0.6,
 # )
-# line plot works fine too
+# line plot or the other plots works fine too
 sns.lineplot(
     data=turkey_2020_to_2025,
     x="Year",
     y="Value",
-    hue="Indicator Name"
+    hue="Indicator Name",
+    ax=ax[0]
+)
+sns.barplot(
+    data=turkey_2020_to_2025,
+    x="Year",
+    y="Value",
+    hue="Indicator Name",
+    ax=ax[1]
 )
 plt.show()
 
