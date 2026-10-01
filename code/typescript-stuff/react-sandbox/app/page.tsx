@@ -64,10 +64,9 @@ function SomeButton() {
 		<button 
 			style={{
 			left: "50%",
-			transform: "translateX: 50%"
+			transform: "translateX: 50%",
 			width: "20vw",
-			height: "10vw",
-			transform: "translate"
+			height: "10vw"
 			}}
 		>
 			Click me!
@@ -83,10 +82,6 @@ export default function Page() {
 		</div>
 	);
 }
-
-
-
-
 
 
 
