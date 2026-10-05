@@ -63,7 +63,7 @@ int main() {
 	init(); // init our player
 	updateThread(fps); // creates controlled polling of our current thread (like a draw-like function)
 	
-	return 1;
+	return 0;
 }
 
 void modifyString(std::string& string, std::string& newString) {
