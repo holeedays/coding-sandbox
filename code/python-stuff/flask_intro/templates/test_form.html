@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<h1>Which dog is cuter?</h1>
+  <p>{{ message }}</p>
+	<h3>Here's the current winner: 
+		{% if (winner == "") %} 
+		Select one dog to get a winner! 
+		{% else %} 
+		{{ winner }} 
+		{% endif %} 
+	</h3>
+
+  <form method="post">
+    <input type="hidden" name="dog_a" value="{{ dogs[0] }}">
+    <input type="hidden" name="dog_b" value="{{ dogs[1] }}">
+
+    <img src="{{ dogs[0] }}" alt="Dog A" width="300">
+    <button name="winner" value="{{ dogs[0] }}">Vote for Dog A</button>
+
+    <img src="{{ dogs[1] }}" alt="Dog B" width="300">
+    <button name="winner" value="{{ dogs[1] }}">Vote for Dog B</button>
+  </form>
+</body>
+</html>

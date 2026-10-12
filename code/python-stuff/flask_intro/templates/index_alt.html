@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Dog vote</title></head>
+<body 
+    style="
+        display: flex;
+				flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        align-content: center;
+				justify-content: center;
+    "
+>
+  <h1
+		style="
+			text-align: center;
+		"
+	>
+	Which dog is cuter?
+	</h1>
+	<section 
+		style="
+			display: flex;
+			justify-content: center;
+		"
+	>
+		<img 
+			style="
+					height: 500px;
+					aspect-ratio: 1/1;
+			" 
+			src="{{ url_for('static', filename=dogs[0]) }}" alt="Dog A"
+		>
+		<img 
+			style="
+				height: 500px;
+				aspect-ratio: 1/1;
+			"
+			src="{{ url_for('static', filename=dogs[1]) }}" alt="Dog B" 
+		>
+	</section>
+</body>
+</html>
