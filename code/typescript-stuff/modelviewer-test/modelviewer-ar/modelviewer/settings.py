@@ -9,9 +9,13 @@ https://docs.djangoproject.com/en/6.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.1/ref/settings/
 """
-
+import os
+import mimetypes
 from pathlib import Path
 from dotenv import load_dotenv
+
+# load the env file if exists
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,12 +25,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = load_dotenv()
+SECRET_KEY = os.environ['SECRET_KEY']
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    # allows my current vercel deployment to host this site
+    '.vercel.app' 
+]
 
 
 # Application definition
@@ -41,7 +50,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+# again, need this for vercel to serve static files
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# this is to help serve files other than text/html on the page
+mimetypes.add_type("model/gltf-binary", ".glb", True)
+mimetypes.add_type("model/gltf+json", ".gltf", True)
+mimetypes.add_type("text/css", ".css", True)
+
 MIDDLEWARE = [
+    # the whitenoise lib allow serverless sites like vercel to serve static files
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
