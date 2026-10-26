@@ -1,9 +1,0 @@
-[submodule "code/typescript-stuff/nextjs-webxr/code/typescript-stuff/nextjs-webxr/nextjs-webxr"]
-	path = code/typescript-stuff/nextjs-webxr/code/typescript-stuff/nextjs-webxr/nextjs-webxr
-	url = https://github.com/holeedays/nextjs-webxr.git
-[submodule "code/typescript-stuff/code/typescript-stuff/flask-website"]
-	path = code/typescript-stuff/code/typescript-stuff/flask-website
-	url = https://github.com/holeedays/flask-website.git
-[submodule "code/python-stuff/ledger_starter/starter/code/typescript-stuff/flask-inheritance-movie-posters"]
-	path = code/python-stuff/ledger_starter/starter/code/typescript-stuff/flask-inheritance-movie-posters
-	url = https://github.com/isaxt/flask-inheritance-movie-posters.git
