@@ -1,0 +1,12 @@
+[submodule "code/typescript-stuff/nextjs-webxr/nextjs-webxr"]
+	path = code/typescript-stuff/nextjs-webxr/nextjs-webxr
+	url = https://github.com/holeedays/nextjs-webxr.git
+[submodule "code/typescript-stuff/flask-website"]
+	path = code/typescript-stuff/flask-website
+	url = https://github.com/holeedays/flask-website.git
+[submodule "code/typescript-stuff/modelviewer-test"]
+	path = code/typescript-stuff/modelviewer-test
+	url = https://github.com/holeedays/modelviewer-test.git
+[submodule "code/typescript-stuff/flask-inheritance-movie-posters"]
+	path = code/typescript-stuff/flask-inheritance-movie-posters
+	url = https://github.com/isaxt/flask-inheritance-movie-posters.git
