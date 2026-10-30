@@ -10,3 +10,6 @@
 [submodule "code/typescript-stuff/flask-inheritance-movie-posters"]
 	path = code/typescript-stuff/flask-inheritance-movie-posters
 	url = https://github.com/isaxt/flask-inheritance-movie-posters.git
+[submodule "code/python-stuff/animal_rescue_flask_starter"]
+	path = code/python-stuff/animal_rescue_flask_starter
+	url = https://github.com/holeedays/animal-rescue-flask-starter.git
